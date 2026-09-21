@@ -1,0 +1,6 @@
+{
+  "name": "First Golden Line Transport",
+  "description": "First Golden Line Transport provides reliable, safe and comfortable transportation, vehicle rental, corporate transportation, airport transfers, event transportation and customized transportation solutions in Saudi Arabia.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
