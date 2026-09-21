@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { heroImage } from '../data/defaultData';
+import heroBannerImg from '../assets/images/riyadh_highway_banner_1790023615123.jpg';
 import { ArrowRight, ShieldCheck, Clock, MapPin, Sparkles, MessageCircle } from 'lucide-react';
 
 export const Hero: React.FC = () => {
@@ -15,13 +15,13 @@ export const Hero: React.FC = () => {
       {/* Background Image with Cinematic Gradient Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroImage}
-          alt="First Golden Line Transport Luxury Vehicle Fleet"
+          src={heroBannerImg}
+          alt="First Golden Line Transport - Saudi Arabia Modern Transit and Highways"
           referrerPolicy="no-referrer"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-75 contrast-110 animate-subtleZoom"
+          className="w-full h-full object-cover object-[center_35%] scale-105 filter brightness-85 contrast-105 animate-subtleZoom"
         />
         {/* Multilayer gradient matching PDF color system: Corporate Navy & Deep Charcoal */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070b12]/95 via-[#0b162c]/85 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#070b12]/95 via-[#0b162c]/85 md:via-[#0b162c]/75 to-[#070b12]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f19] via-transparent to-[#070b12]/60" />
 
         {/* Geometric Blue Polygon Graphic matching PDF Page 1 & 2 Cover Style */}

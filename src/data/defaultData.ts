@@ -1,7 +1,7 @@
 import { Vehicle, Service, Destination, Client, CompanyInfo, Inquiry } from '../types';
 
 // Real hero & showcase images
-export const heroImage = '/src/assets/images/hero_transport_1790012366515.jpg';
+export const heroImage = '/src/assets/images/riyadh_highway_banner_1790023615123.jpg';
 export const aboutImage = '/src/assets/images/chauffeur_executive_1790012380964.jpg';
 export const eventFleetImage = '/src/assets/images/event_fleet_1790012395009.jpg';
 export const companyLogo = '/src/assets/images/company_golden_logo_1790019198559.jpg';
