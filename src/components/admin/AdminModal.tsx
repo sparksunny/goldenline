@@ -66,7 +66,7 @@ export const AdminModal: React.FC = () => {
   const [newVehicle, setNewVehicle] = useState<Omit<Vehicle, 'id'>>({
     name: '',
     category: 'SUV',
-    image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+    image: '/vehicles/gmc_yukon_denali_1790066467126.jpg',
     description: '',
     passengers: 7,
     luggage: 5,
@@ -134,7 +134,7 @@ export const AdminModal: React.FC = () => {
     setNewVehicle({
       name: '',
       category: 'SUV',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80',
+      image: '/vehicles/gmc_yukon_denali_1790066467126.jpg',
       description: '',
       passengers: 7,
       luggage: 5,
@@ -721,6 +721,12 @@ export const AdminModal: React.FC = () => {
                             src={v.image}
                             alt={v.name}
                             referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              if (!target.src.includes('gmc_yukon_denali')) {
+                                target.src = '/vehicles/gmc_yukon_denali_1790066467126.jpg';
+                              }
+                            }}
                             className="w-16 h-12 object-cover rounded-lg bg-slate-800"
                           />
                           <div>

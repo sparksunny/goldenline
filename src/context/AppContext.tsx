@@ -64,11 +64,19 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [vehicles, setVehicles] = useState<Vehicle[]>(() => {
     try {
-      const saved = localStorage.getItem('fglt_vehicles_v3');
+      const saved = localStorage.getItem('fglt_vehicles_v4');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length >= 10) {
-          return parsed;
+          // If any vehicle still points to an old unsplash or broken image, upgrade to local image
+          const defaultMap = new Map(initialVehicles.map(v => [v.id, v.image]));
+          const upgraded = parsed.map((v: Vehicle) => {
+            if (!v.image || v.image.includes('unsplash.com') || v.image.startsWith('/src/assets/')) {
+              return { ...v, image: defaultMap.get(v.id) || v.image };
+            }
+            return v;
+          });
+          return upgraded;
         }
       }
       return initialVehicles;
@@ -131,7 +139,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   }, [companyInfo]);
 
   useEffect(() => {
-    localStorage.setItem('fglt_vehicles_v3', JSON.stringify(vehicles));
+    localStorage.setItem('fglt_vehicles_v4', JSON.stringify(vehicles));
   }, [vehicles]);
 
   useEffect(() => {

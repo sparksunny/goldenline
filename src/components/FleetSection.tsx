@@ -72,6 +72,12 @@ export const FleetSection: React.FC = () => {
                     src={vehicle.image}
                     alt={vehicle.name}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes('gmc_yukon_denali')) {
+                        target.src = '/vehicles/gmc_yukon_denali_1790066467126.jpg';
+                      }
+                    }}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   

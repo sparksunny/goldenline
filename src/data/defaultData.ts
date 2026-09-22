@@ -1,19 +1,26 @@
 import { Vehicle, Service, Destination, Client, CompanyInfo, Inquiry } from '../types';
 
 // Real hero & showcase images
-export const heroImage = '/src/assets/images/riyadh_highway_banner_1790023615123.jpg';
-export const aboutImage = '/src/assets/images/chauffeur_executive_1790012380964.jpg';
-export const eventFleetImage = '/src/assets/images/event_fleet_1790012395009.jpg';
-export const companyLogo = '/src/assets/images/company_golden_logo_1790019198559.jpg';
+export const heroImage = '/vehicles/riyadh_highway_banner_1790023615123.jpg';
+export const aboutImage = '/vehicles/chauffeur_executive_1790012380964.jpg';
+export const eventFleetImage = '/vehicles/event_fleet_1790012395009.jpg';
+export const companyLogo = '/vehicles/company_golden_logo_1790019198559.jpg';
 
-// Official Fleet Images
-export const gmcYukonDenaliImage = '/src/assets/images/gmc_yukon_denali_1790066467126.jpg';
-export const hyundaiStariaVipImage = '/src/assets/images/hyundai_staria_vip_1790066489249.jpg';
-export const asiastarCoachImage = '/src/assets/images/asiastar_vip_coach_1790066511639.jpg';
-export const toyotaCoasterBusImage = '/src/assets/images/toyota_coaster_bus_1790066548706.jpg';
-export const toyotaHiAceHighRoofImage = '/src/assets/images/toyota_hiace_highroof_1790066564971.jpg';
-export const toyotaHiAceStandardImage = '/src/assets/images/toyota_hiace_standard_1790066587304.jpg';
-export const commercialFleetLineupImage = '/src/assets/images/commercial_fleet_lineup_1790066609047.jpg';
+// Official Fleet Images (Served reliably from /vehicles/ in public directory)
+export const gmcYukonDenaliImage = '/vehicles/gmc_yukon_denali_1790066467126.jpg';
+export const hyundaiStariaVipImage = '/vehicles/hyundai_staria_vip_1790066489249.jpg';
+export const asiastarCoachImage = '/vehicles/asiastar_vip_coach_1790066511639.jpg';
+export const toyotaCoasterBusImage = '/vehicles/toyota_coaster_bus_1790066548706.jpg';
+export const toyotaHiAceHighRoofImage = '/vehicles/toyota_hiace_highroof_1790066564971.jpg';
+export const toyotaHiAceStandardImage = '/vehicles/toyota_hiace_standard_1790066587304.jpg';
+export const commercialFleetLineupImage = '/vehicles/commercial_fleet_lineup_1790066609047.jpg';
+export const toyotaLandCruiserImage = '/vehicles/toyota_land_cruiser_300_1790067353747.jpg';
+export const nissanPatrolImage = '/vehicles/nissan_patrol_platinum_1790067374771.jpg';
+export const chevroletTahoeImage = '/vehicles/chevrolet_tahoe_luxury_1790067395104.jpg';
+export const toyotaPradoImage = '/vehicles/toyota_prado_txl_1790067419862.jpg';
+export const fordTaurusImage = '/vehicles/ford_taurus_titanium_1790067437242.jpg';
+export const kiaSorentoImage = '/vehicles/kia_sorento_suv_1790067461297.jpg';
+export const kiaSportageImage = '/vehicles/kia_sportage_suv_1790067483653.jpg';
 
 export const initialCompanyInfo: CompanyInfo = {
   nameEn: 'FIRST GOLDEN LINE TRANSPORT',
@@ -154,7 +161,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-land-cruiser',
     name: 'LAND CRUISER',
     category: 'Luxury',
-    image: 'https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80',
+    image: toyotaLandCruiserImage,
     description:
       'The legendary King of the Road in Saudi Arabia. Unrivaled luxury meets extreme terrain mastery—ideal for AlUla desert excursions and corporate project visits in NEOM.',
     passengers: 7,
@@ -169,7 +176,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-nissan-patrol',
     name: 'NISSAN PATROL',
     category: 'Luxury',
-    image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80',
+    image: nissanPatrolImage,
     description:
       'The iconic Hero of All Terrain. Unmatched road presence, diamond-stitched luxury leather, and powerful performance for executive travel across KSA.',
     passengers: 7,
@@ -184,7 +191,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-chevrolet-tahoe',
     name: 'CHEVROLET TAHOE',
     category: 'Large SUV',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
+    image: chevroletTahoeImage,
     description:
       'Spacious and authoritative full-size SUV engineered for long-distance comfort, executive delegation escort, and airport VIP shuttles.',
     passengers: 7,
@@ -199,7 +206,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-toyota-prado',
     name: 'TOYOTA PRADO',
     category: 'SUV',
-    image: 'https://images.unsplash.com/photo-1594502184342-2e12f877aa73?auto=format&fit=crop&w=1200&q=80',
+    image: toyotaPradoImage,
     description:
       'Robust and dependable premium mid-size 4x4 built to effortlessly conquer highway commutes and regional site visits throughout Tabuk and NEOM.',
     passengers: 7,
@@ -214,7 +221,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-ford-taurus',
     name: 'FORD TAURUS',
     category: 'Sedan',
-    image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=80',
+    image: fordTaurusImage,
     description:
       'Refined executive sedan balancing sleek modern aerodynamics, plush seating, and smooth city driving for business professionals and daily rentals.',
     passengers: 4,
@@ -229,7 +236,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-kia-sorento',
     name: 'KIA SORENTO',
     category: 'SUV',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80',
+    image: kiaSorentoImage,
     description:
       'Versatile 3-row mid-size SUV combining bold styling with premium ride comfort for family travel, project teams, and flexible daily chauffeuring.',
     passengers: 6,
@@ -244,7 +251,7 @@ export const initialVehicles: Vehicle[] = [
     id: 'v-kia-sportage',
     name: 'KIA SPORTAGE',
     category: 'SUV',
-    image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1200&q=80',
+    image: kiaSportageImage,
     description:
       'Agile and modern compact crossover featuring futuristic styling, advanced infotainment, and fuel efficiency for agile urban transit and short-term rentals.',
     passengers: 5,
