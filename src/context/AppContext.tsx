@@ -64,8 +64,14 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [vehicles, setVehicles] = useState<Vehicle[]>(() => {
     try {
-      const saved = localStorage.getItem('fglt_vehicles');
-      return saved ? JSON.parse(saved) : initialVehicles;
+      const saved = localStorage.getItem('fglt_vehicles_v3');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length >= 10) {
+          return parsed;
+        }
+      }
+      return initialVehicles;
     } catch {
       return initialVehicles;
     }
@@ -125,7 +131,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   }, [companyInfo]);
 
   useEffect(() => {
-    localStorage.setItem('fglt_vehicles', JSON.stringify(vehicles));
+    localStorage.setItem('fglt_vehicles_v3', JSON.stringify(vehicles));
   }, [vehicles]);
 
   useEffect(() => {

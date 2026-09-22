@@ -6,7 +6,7 @@ export const FleetSection: React.FC = () => {
   const { vehicles, setBookingPrefill } = useApp();
   const [filter, setFilter] = useState<string>('All');
 
-  const filterCategories = ['All', 'Luxury', 'Large SUV', 'SUV', 'Sedan', 'Available'];
+  const filterCategories = ['All', 'Van', 'Minibus', 'Luxury Coach', 'Large SUV', 'Luxury', 'SUV', 'Sedan', 'Available'];
 
   const filteredVehicles = vehicles.filter((vehicle) => {
     if (filter === 'All') return true;
@@ -29,13 +29,13 @@ export const FleetSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-xs font-bold uppercase tracking-widest text-[#003882] bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-              Executive Fleet Collection
+              Official Corporate & Executive Fleet
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0a1526] mt-3 tracking-tight font-sans">
               OUR <span className="text-[#003882]">FLEET</span>
             </h2>
             <p className="text-slate-600 mt-2 text-sm sm:text-base max-w-xl">
-              From flagship full-size SUVs to executive sedans and all-terrain 4x4s, our meticulously maintained fleet delivers uncompromised safety and luxury across Saudi Arabia.
+              From flagship VIP coaches and commuter vans to executive SUVs and sedans, our modern, meticulously maintained fleet delivers uncompromised safety, comfort, and reliability across Saudi Arabia.
             </p>
           </div>
 
@@ -111,14 +111,18 @@ export const FleetSection: React.FC = () => {
                       <div className="flex items-center justify-center text-slate-400 mb-1">
                         <Users className="w-3.5 h-3.5 text-[#003882]" />
                       </div>
-                      <span className="text-[11px] font-bold text-slate-800">{vehicle.passengers} Seats</span>
+                      <span className="text-[11px] font-bold text-slate-800">
+                        {vehicle.passengers >= 100 ? `${vehicle.passengers}+ Seats` : `${vehicle.passengers} Seats`}
+                      </span>
                     </div>
 
                     <div className="border-x border-slate-200">
                       <div className="flex items-center justify-center text-slate-400 mb-1">
                         <Briefcase className="w-3.5 h-3.5 text-[#003882]" />
                       </div>
-                      <span className="text-[11px] font-bold text-slate-800">{vehicle.luggage} Bags</span>
+                      <span className="text-[11px] font-bold text-slate-800">
+                        {vehicle.luggage >= 80 ? `${vehicle.luggage}+ Bags` : `${vehicle.luggage} Bags`}
+                      </span>
                     </div>
 
                     <div>

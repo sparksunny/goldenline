@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
+import { BrandLogo } from './common/BrandLogo';
 import { Phone, Menu, X, Shield, ChevronRight, Calendar } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -36,26 +37,9 @@ export const Header: React.FC = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo & Bilingual Typography matching PDF */}
-        <a href="#home" className="flex items-center gap-3 group focus:outline-none" id="brand-logo-link">
-          {/* Emblem inspired by PDF page 1 */}
-          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#d4af37] via-[#b8860b] to-[#996515] p-0.5 shadow-md group-hover:scale-105 transition-transform flex-shrink-0">
-            <div className="w-full h-full bg-[#0a1120] rounded-[10px] flex items-center justify-center text-white font-bold text-lg sm:text-xl">
-              <span className="bg-gradient-to-r from-[#ffd700] via-[#f5deb3] to-[#d4af37] bg-clip-text text-transparent font-serif tracking-wider">
-                GL
-              </span>
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-semibold tracking-wide text-[#d4af37] font-sans">
-              {companyInfo.nameAr}
-            </span>
-            <span className="text-sm sm:text-base font-extrabold tracking-wider text-white uppercase font-sans">
-              FIRST GOLDEN LINE
-              <span className="text-[#3b82f6] ml-1.5 font-medium text-xs sm:text-sm">TRANSPORT</span>
-            </span>
-          </div>
+        {/* Brand Logo replacing old emblem and text with exact provided unified logo */}
+        <a href="#home" className="flex items-center group focus:outline-none py-1 flex-shrink-0" id="brand-logo-link" aria-label="First Golden Line Transport">
+          <BrandLogo className="h-11 sm:h-13 lg:h-15 w-auto transform group-hover:scale-[1.02] transition-transform duration-200" />
         </a>
 
         {/* Desktop Navigation */}

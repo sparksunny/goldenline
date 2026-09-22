@@ -1,5 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
+import { BrandLogo } from './common/BrandLogo';
 import { Phone, Mail, MapPin, Globe, Shield, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -11,22 +12,9 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800/80">
           {/* Col 1 & 2: Brand & Identity */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#d4af37] via-[#b8860b] to-[#996515] p-0.5 shadow-md flex-shrink-0">
-                <div className="w-full h-full bg-[#0a1120] rounded-[10px] flex items-center justify-center text-white font-bold text-base">
-                  <span className="bg-gradient-to-r from-[#ffd700] to-[#d4af37] bg-clip-text text-transparent font-serif">
-                    GL
-                  </span>
-                </div>
-              </div>
-
-              <div>
-                <div className="text-xs font-semibold text-[#d4af37]">{companyInfo.nameAr}</div>
-                <div className="text-base font-extrabold text-white uppercase tracking-wider">
-                  FIRST GOLDEN LINE <span className="text-blue-500 font-normal text-xs">TRANSPORT</span>
-                </div>
-              </div>
-            </div>
+            <a href="#home" className="inline-block group focus:outline-none" id="footer-brand-logo-link" aria-label="First Golden Line Transport">
+              <BrandLogo className="h-14 sm:h-16 w-auto transform group-hover:scale-[1.02] transition-transform duration-200" />
+            </a>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
               Established in 2020. Providing dependable, safe, and luxurious transportation solutions across Tabuk, NEOM, AlUla, and throughout the Kingdom of Saudi Arabia.

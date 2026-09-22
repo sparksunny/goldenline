@@ -641,10 +641,14 @@ export const AdminModal: React.FC = () => {
                           }
                           className="bg-[#0b101c] border border-slate-700 rounded-xl px-3 py-2 text-xs text-white"
                         >
+                          <option value="Van">Van</option>
+                          <option value="Minibus">Minibus</option>
+                          <option value="Luxury Coach">Luxury Coach</option>
                           <option value="Large SUV">Large SUV</option>
                           <option value="Luxury">Luxury</option>
                           <option value="SUV">SUV</option>
                           <option value="Sedan">Sedan</option>
+                          <option value="Fleet">Fleet</option>
                         </select>
                         <input
                           type="text"

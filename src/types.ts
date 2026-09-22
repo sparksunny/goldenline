@@ -1,7 +1,7 @@
 export interface Vehicle {
   id: string;
   name: string;
-  category: 'SUV' | 'Large SUV' | 'Sedan' | 'Luxury';
+  category: 'SUV' | 'Large SUV' | 'Sedan' | 'Luxury' | 'Van' | 'Minibus' | 'Luxury Coach' | 'Fleet';
   image: string;
   description: string;
   passengers: number;
