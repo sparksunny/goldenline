@@ -1,19 +1,33 @@
 import { Vehicle, Service, Destination, Client, CompanyInfo, Inquiry } from '../types';
 
+import heroBannerImg from '../assets/images/riyadh_highway_banner_1790023615123.jpg';
+import chauffeurImg from '../assets/images/chauffeur_executive_1790012380964.jpg';
+import eventFleetImg from '../assets/images/event_fleet_1790012395009.jpg';
+import goldenLogoImg from '../assets/images/company_golden_logo_1790019198559.jpg';
+
+// Official Fleet Images (ES module imports guarantee bundling in production)
+import gmcYukonImg from '../assets/images/gmc_yukon_denali_1790066467126.jpg';
+import hyundaiStariaImg from '../assets/images/hyundai_staria_vip_1790066489249.jpg';
+import asiastarCoachImg from '../assets/images/asiastar_vip_coach_1790066511639.jpg';
+import toyotaCoasterImg from '../assets/images/toyota_coaster_bus_1790066548706.jpg';
+import toyotaHiAceHighRoofImg from '../assets/images/toyota_hiace_highroof_1790066564971.jpg';
+import toyotaHiAceStandardImg from '../assets/images/toyota_hiace_standard_1790066587304.jpg';
+import commercialFleetLineupImg from '../assets/images/commercial_fleet_lineup_1790066609047.jpg';
+
 // Real hero & showcase images
-export const heroImage = '/src/assets/images/riyadh_highway_banner_1790023615123.jpg';
-export const aboutImage = '/src/assets/images/chauffeur_executive_1790012380964.jpg';
-export const eventFleetImage = '/src/assets/images/event_fleet_1790012395009.jpg';
-export const companyLogo = '/src/assets/images/company_golden_logo_1790019198559.jpg';
+export const heroImage = heroBannerImg;
+export const aboutImage = chauffeurImg;
+export const eventFleetImage = eventFleetImg;
+export const companyLogo = goldenLogoImg;
 
 // Official Fleet Images
-export const gmcYukonDenaliImage = '/src/assets/images/gmc_yukon_denali_1790066467126.jpg';
-export const hyundaiStariaVipImage = '/src/assets/images/hyundai_staria_vip_1790066489249.jpg';
-export const asiastarCoachImage = '/src/assets/images/asiastar_vip_coach_1790066511639.jpg';
-export const toyotaCoasterBusImage = '/src/assets/images/toyota_coaster_bus_1790066548706.jpg';
-export const toyotaHiAceHighRoofImage = '/src/assets/images/toyota_hiace_highroof_1790066564971.jpg';
-export const toyotaHiAceStandardImage = '/src/assets/images/toyota_hiace_standard_1790066587304.jpg';
-export const commercialFleetLineupImage = '/src/assets/images/commercial_fleet_lineup_1790066609047.jpg';
+export const gmcYukonDenaliImage = gmcYukonImg;
+export const hyundaiStariaVipImage = hyundaiStariaImg;
+export const asiastarCoachImage = asiastarCoachImg;
+export const toyotaCoasterBusImage = toyotaCoasterImg;
+export const toyotaHiAceHighRoofImage = toyotaHiAceHighRoofImg;
+export const toyotaHiAceStandardImage = toyotaHiAceStandardImg;
+export const commercialFleetLineupImage = commercialFleetLineupImg;
 
 export const initialCompanyInfo: CompanyInfo = {
   nameEn: 'FIRST GOLDEN LINE TRANSPORT',

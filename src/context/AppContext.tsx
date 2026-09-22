@@ -64,11 +64,17 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   const [vehicles, setVehicles] = useState<Vehicle[]>(() => {
     try {
-      const saved = localStorage.getItem('fglt_vehicles_v3');
+      const saved = localStorage.getItem('fglt_vehicles_v5');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length >= 10) {
-          return parsed;
+          return parsed.map((item) => {
+            const initial = initialVehicles.find((iv) => iv.id === item.id);
+            if (initial && (!item.image || item.image.startsWith('/src/assets/images'))) {
+              return { ...item, image: initial.image };
+            }
+            return item;
+          });
         }
       }
       return initialVehicles;
@@ -131,7 +137,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   }, [companyInfo]);
 
   useEffect(() => {
-    localStorage.setItem('fglt_vehicles_v3', JSON.stringify(vehicles));
+    localStorage.setItem('fglt_vehicles_v5', JSON.stringify(vehicles));
   }, [vehicles]);
 
   useEffect(() => {

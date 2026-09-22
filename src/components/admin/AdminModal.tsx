@@ -721,6 +721,13 @@ export const AdminModal: React.FC = () => {
                             src={v.image}
                             alt={v.name}
                             referrerPolicy="no-referrer"
+                            onError={(e) => {
+                              const target = e.currentTarget;
+                              const filename = v.image ? v.image.split('/').pop()?.split('?')[0] : '';
+                              if (filename && !target.src.includes(`/vehicles/${filename}`)) {
+                                target.src = `/vehicles/${filename}`;
+                              }
+                            }}
                             className="w-16 h-12 object-cover rounded-lg bg-slate-800"
                           />
                           <div>

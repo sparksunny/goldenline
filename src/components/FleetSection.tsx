@@ -72,6 +72,13 @@ export const FleetSection: React.FC = () => {
                     src={vehicle.image}
                     alt={vehicle.name}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      const filename = vehicle.image ? vehicle.image.split('/').pop()?.split('?')[0] : '';
+                      if (filename && !target.src.includes(`/vehicles/${filename}`)) {
+                        target.src = `/vehicles/${filename}`;
+                      }
+                    }}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   
