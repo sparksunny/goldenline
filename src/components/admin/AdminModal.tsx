@@ -54,7 +54,6 @@ export const AdminModal: React.FC = () => {
     resetToDefaults,
   } = useApp();
 
-  const [username, setUsername] = useState('Admin');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
   const [activeTab, setActiveTab] = useState<
@@ -109,13 +108,9 @@ export const AdminModal: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError('');
-    if (username.trim().toLowerCase() !== 'admin') {
-      setLoginError('Invalid username. Use Admin');
-      return;
-    }
     const success = loginAdmin(password);
     if (!success) {
-      setLoginError('Incorrect password. Demo password is: adnan12345');
+      setLoginError('Incorrect password. Please try again.');
     }
   };
 
@@ -245,17 +240,6 @@ export const AdminModal: React.FC = () => {
 
               <form onSubmit={handleLogin} className="space-y-4 text-left">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-300 mb-1">Username</label>
-                  <input
-                    type="text"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    className="w-full bg-[#0d1320] border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500"
-                    placeholder="Admin"
-                  />
-                </div>
-
-                <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">Password</label>
                   <input
                     type="password"
@@ -263,12 +247,8 @@ export const AdminModal: React.FC = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full bg-[#0d1320] border border-slate-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500"
                     placeholder="Enter password"
+                    autoFocus
                   />
-                </div>
-
-                {/* Prompt Demo Hint */}
-                <div className="p-3 bg-blue-950/40 rounded-xl border border-blue-800/40 text-[11px] text-blue-300">
-                  <span className="font-bold">Prompt Demo Credentials:</span> User: <code className="text-white">Admin</code>, Pass: <code className="text-white">adnan12345</code>
                 </div>
 
                 <button
